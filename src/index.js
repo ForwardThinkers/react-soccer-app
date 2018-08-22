@@ -7,7 +7,7 @@ import Routes from './Components/routes';
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes/>
+      <Routes />
     </BrowserRouter>
   )
 }
