@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './Resources/css/app.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Components/routes';
-
 const App = () => {
   return (
     <BrowserRouter>
