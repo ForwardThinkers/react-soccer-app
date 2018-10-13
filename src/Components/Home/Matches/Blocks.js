@@ -14,9 +14,7 @@ class Blocks extends Component {
       .once('value')
       .then(snapshot => {
         const matches = firebaseLoop(snapshot);
-        this.setState({
-          matches: matches.reverse()
-        })
+        this.setState({ matches: matches.reverse() })
       })
   }
 
@@ -35,7 +33,6 @@ class Blocks extends Component {
   )
 
   render() {
-    console.log(this.state);
     return (
       <div className="home_matches">
         {this.showMatches(this.state.matches)}
