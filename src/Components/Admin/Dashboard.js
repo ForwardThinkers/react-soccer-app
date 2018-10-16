@@ -1,13 +1,13 @@
 import React from 'react';
-import Admin from '../Layout/Admin';
+import AdminLayout from '../Layout/Admin';
 
 const Dashboard = () => {
   return (
-    <Admin>
+    <AdminLayout>
       <div className="user_dashboard">
         Admin user dashboard
       </div>
-    </Admin>
+    </AdminLayout>
   );
 };
 
