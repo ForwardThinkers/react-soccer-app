@@ -221,7 +221,7 @@ export default class AddEditMatch extends Component {
     }
 
     if(!matchId){
-      // ADD Match
+      getTeams(false, 'Add Match')
     } else {
       firebaseDB.ref(`matches/${matchId}`).once('value')
         .then(snapshot => {
@@ -262,12 +262,12 @@ export default class AddEditMatch extends Component {
       if(this.state.formType === 'Edit Match'){
         firebaseDB.ref(`matches/${this.state.matchId}`)
           .update(dataToSubmit)
-          .then( () =>{
-            this.successForm('Updated correctly');
-          })
-          .catch( e => {this.setState({ formError: true })});
+          .then( () => this.successForm('Updated correctly') )
+          .catch( e => this.setState({ formError: true }) );
       } else {
-        // Add Match
+        firebaseMatches.push(dataToSubmit)
+          .then( () => this.props.history.push('/admin_matches') )
+          .catch( e => this.setState({ formError: true }) );
       }
     } else {
       this.setState({formError: true});
